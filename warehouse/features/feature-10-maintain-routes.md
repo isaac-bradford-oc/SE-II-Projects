@@ -4,8 +4,8 @@
 **Branch pattern:** `feature/10-maintain-routes`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Keep a record of current delivery routes and drivers.
-**Depends on:** — 
+**Input:** Keep a record of current delivery routes and corresponding drivers.
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md), [Feature 5 — Maintain Workers](feature-5-maintain-workers.md), [Feature 9 — Maintain Customers](feature-9-maintain-customers.md)
 
 ---
 
@@ -53,7 +53,7 @@
 
 ## Key Entities
 
-- **Route**: a delivery route with Name, Customers, Primary & Secondary Drivers.
+- **Route**: a delivery route with Name, Warehouse, Customers, Primary & Secondary Drivers.
 
 ---
 
@@ -65,6 +65,7 @@
 |--------|-------|
 | id | PK |
 | routeName | nvarchar(100), required |
+| warehouse | nvarchar(100), required |
 | customers | nvarchar(255), required, customer names separated by commas |
 | driverPrimary | nvarchar(100), required |
 | driverSecondary | nvarchar(100), required |

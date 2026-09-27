@@ -4,8 +4,8 @@
 **Branch pattern:** `feature/7-maintain-supplier-orders`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Maintain system for ordering from suppliers.
-**Depends on:** — 
+**Input:** Keep a record of supplier orders. Send and receive those orders.
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md), [Feature 6 — Maintain Suppliers](feature-6-maintain-suppliers.md), [Feature 11 — Maintain Reports](feature-11-maintain-reports.md)
 
 ---
 
@@ -99,7 +99,7 @@
 
 ## Key Entities
 
-- **Supplier Order**: supplier order with Name, Address, Customer Number, P.O Number, Order Date, and Authorizor.
+- **Supplier Order**: supplier order with Warehouse, Supplier, Order Date, and Authorizor.
 
 ---
 
@@ -110,10 +110,8 @@
 | Column | Notes |
 |--------|-------|
 | id | PK |
-| supplierName | nvarchar(100), required |
-| supplierAddress | nvarchar(255), required |
-| customerNumber | int, required |
-| postOfficeNumber | int, required |
+| warehouse | nvarchar(100), required |
+| supplier | nvarchar(100), required |
 | orderDate | date, required |
 | authorizer | nvarchar(100), required |
 
@@ -199,12 +197,14 @@
 * **Given** the corresponding order exists
 * **When** a stocker marks an order item as damaged or missing
 * **Then** the system updates the order
+* **And** management is sent a report
 * **And** the user receives visual confirmation
 
 #### Scenario: User logs duplicate items
 * **Given** the corresponding order exists
 * **When** a stocker marks an order item as damaged or missing for a second time
 * **Then** the system updates the order with duplicate information
+* **And** management is sent a report
 * **And** the user receives visual confirmation
 
 ### US-7.7 — Auto-order low items
@@ -213,13 +213,11 @@
 * **Given** the specified items are below their minimum target quantity
 * **When** the system creates an auto-order
 * **Then** the system sends the order to the supplier
-* **And** management is sent a report
 
 #### Scenario: Item quantity is inaccurate
 * **Given** the specified items are reported below their minimum target quantity, but their actual quantity is higher
 * **When** the system creates an auto-order
 * **Then** the system sends the order to the supplier for too much of the specified items
-* **And** management is sent an inaccurate report
 
 ### US-7.8 — Stock order
 

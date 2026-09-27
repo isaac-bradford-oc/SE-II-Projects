@@ -4,8 +4,8 @@
 **Branch pattern:** `feature/4-maintain-inventory`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Keep record of active inventory locations, including what kind and of how many slots are in those locations. 
-**Depends on:** — 
+**Input:** Keep record of active inventory locations, including what kind and of how many items are in those locations. 
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md)
 
 ---
 
@@ -90,15 +90,16 @@
 ### Functional Requirements
 
 - **FR-001**: System MUST allow office managers to manage individual inventory slots/bins.
-- **FR-002**: System MUST increment and decrement slot quantities as logged by pickers and stockers.
+- **FR-002**: System MUST increment and decrement item quantities as logged by pickers and stockers.
 - **FR-003**: System MUST validate user form input before saving to database.
 - **FR-004**: System MUST provide the user with visual confirmation of action taken after attempting to save input.
+- **FR-005**: System MUST create out of stock item reports the moment a given item quantity hits zero.
 
 ---
 
 ## Key Entities
 
-- **Slot**: inventory slot with Slot Number, Active Bins, and Total Bins.
+- **Slot**: inventory slot with Warehouse, Slot Number, Active Bins, and Total Bins.
 - **Bin**: slot bin with Bin Number and Item Name.
 
 ---
@@ -110,6 +111,7 @@
 | Column | Notes |
 |--------|-------|
 | id | PK |
+| warehouse | nvarchar(100), required |
 | slotNumber | int, unique, required |
 | activeBins | nvarchar(100), required, bin numbers separated by commas |
 | totalBins | int, required |

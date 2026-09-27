@@ -4,7 +4,7 @@
 **Branch pattern:** `feature/1-maintain-companies`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Keep a record of the company's current information.
+**Input:** Keep a record of all registered companies and their current information.
 **Depends on:** — 
 
 ---

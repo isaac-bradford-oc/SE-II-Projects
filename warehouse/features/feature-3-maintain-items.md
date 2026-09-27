@@ -5,7 +5,7 @@
 **Status:** Ready
 **Created:** 2026-09-19
 **Input:** Keep a record of current inventory items.
-**Depends on:** — 
+**Depends on:** — [Feature 11 — Maintain Reports](feature-11-maintain-reports.md)
 
 ---
 
@@ -37,6 +37,15 @@
 **Priority:** P1
 **Independent test:** Delete an item from inventory and see that it is not in the database table
 **Acceptance scenarios:** see ### US-3.3 under Acceptance Criteria
+
+### US-3.4: Report out of stock items
+**As a** automated process
+**I want** to create reports for out of stock items
+**So that** office managers know that there is a problem with the supplier or item min/max values
+
+**Priority:** P1
+**Independent test:** Item quantity hits zero and system creates an "item out of stock" report
+**Acceptance scenarios:** see ### US-3.4 under Acceptance Criteria
 
 ---
 
@@ -122,3 +131,15 @@
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
+
+### US-3.4 — Report out of stock items
+
+#### Scenario: System creates report successfully
+* **Given** a report has not already been created
+* **When** an item quantity hits zero 
+* **Then** the system creates an "item out of stock" report
+
+#### Scenario: Picker logs more outgoing items than needed
+* **Given** a picker logs more outgoing items than items that were actually picked
+* **When** an item quantity hits zero 
+* **Then** the system creates an "item out of stock" report

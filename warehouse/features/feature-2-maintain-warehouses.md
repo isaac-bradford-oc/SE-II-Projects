@@ -4,8 +4,8 @@
 **Branch pattern:** `feature/2-maintain-warehouses`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Keep a record of current warehouses and their information.
-**Depends on:** — 
+**Input:** Keep a record of current company warehouses and their information.
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md)
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Key Entities
 
-- **Warehouse**: one of the company's warehouses with Name and Address.
+- **Warehouse**: a company warehouse with Company, Name, and Address.
 
 ---
 
@@ -63,6 +63,7 @@
 | Column | Notes |
 |--------|-------|
 | id | PK |
+| company | nvarchar(100), required |
 | warehouseName | nvarchar(100), required |
 | warehouseAddress | nvarchar(255), required |
 

@@ -5,7 +5,7 @@
 **Status:** Ready
 **Created:** 2026-09-19
 **Input:** Keep current workers' information updated.
-**Depends on:** —
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md)
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Key Entities
 
-- **Worker**: a warehouse worker with name and role (`picker` | `stocker` | `driver`)
+- **Worker**: a warehouse worker with name, warehouse, and role (`picker` | `stocker` | `driver`)
 
 ---
 
@@ -64,6 +64,7 @@
 |--------|-------|
 | id | PK |
 | workerName | nvarchar(100), unique, required |
+| warehouse | nvarchar(100), required |
 | role | enum: `PICKER` \| `STOCKER` \| `DRIVER`, required |
 
 ---

@@ -4,8 +4,8 @@
 **Branch pattern:** `feature/8-maintain-customers`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Keep a record of current customers and their information.
-**Depends on:** — 
+**Input:** Keep a record of current company customers and their information.
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md)
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Key Entities
 
-- **Customer**: one of the company's customers with Name, Address, and Terms.
+- **Customer**: a company customer with Company, Name, Address, Customer Number, P.O. Number, and Terms.
 
 ---
 
@@ -63,8 +63,11 @@
 | Column | Notes |
 |--------|-------|
 | id | PK |
+| company | nvarchar(100), required |
 | customerName | nvarchar(100), required |
 | customerAddress | nvarchar(255), required |
+| customerNumber | int, required |
+| postOfficeNumber | int, required |
 | customerTerms | int, required |
 
 ---

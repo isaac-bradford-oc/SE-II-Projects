@@ -5,7 +5,7 @@
 **Status:** Ready
 **Created:** 2026-09-19
 **Input:** Keep a record of current suppliers and their information.
-**Depends on:** — 
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md)
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Key Entities
 
-- **Supplier**: one of the company's item suppliers with Name, Address, Ship Days, Terms, and Min Order.
+- **Supplier**: a company supplier with Company, Name, Address, Customer Number, P.O. Number, Ship Days, Terms, and Min Order.
 
 ---
 
@@ -63,8 +63,11 @@
 | Column | Notes |
 |--------|-------|
 | id | PK |
+| company | nvarchar(100), required |
 | supplierName | nvarchar(100), required |
 | supplierAddress | nvarchar(255), required |
+| customerNumber | int, required |
+| postOfficeNumber | int, required |
 | supplierShipDays | int, required |
 | supplierTerms | int, required |
 | supplierMinOrder | int, required |

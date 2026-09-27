@@ -4,8 +4,8 @@
 **Branch pattern:** `feature/9-maintain-customer-orders`
 **Status:** Ready
 **Created:** 2026-09-19
-**Input:** Maintain system for ordering from customers.
-**Depends on:** — 
+**Input:** Keep a record of customer orders. Send and receive those orders.
+**Depends on:** — [Feature 1 — Maintain Companies](feature-1-maintain-companies.md), [Feature 2 — Maintain Warehouses](feature-2-maintain-warehouses.md), [Feature 9 — Maintain Customers](feature-9-maintain-customers.md), [Feature 11 — Maintain Reports](feature-11-maintain-reports.md)
 
 ---
 
@@ -101,7 +101,7 @@
 
 ## Key Entities
 
-- **Customer Order**: customer order with Name, Address, Customer Number, P.O Number, Order Date, and Authorizor.
+- **Customer Order**: customer order with Warehouse, Customer, Order Date, and Authorizer.
 
 ---
 
@@ -112,10 +112,8 @@
 | Column | Notes |
 |--------|-------|
 | id | PK |
-| customerName | nvarchar(100), required |
-| customerAddress | nvarchar(255), required |
-| customerNumber | int, required |
-| postOfficeNumber | int, required |
+| warehouse | nvarchar(100), required |
+| customer | nvarchar(100), required |
 | orderDate | date, required |
 | authorizer | nvarchar(100), required |
 
@@ -215,14 +213,12 @@
 * **Given** the order is delivered to customer
 * **When** the driver marks order as delivered
 * **Then** the system updates the database/website
-* **And** management is sent a report
 * **And** the user receives visual confirmation
 
 #### Scenario: User marks order as delivered before finished delivering
 * **Given** the order is not delivered to customer
 * **When** the driver marks order as delivered
 * **Then** the system updates the database/website
-* **And** management is sent a report
 * **And** the user receives visual confirmation
 
 ### US-9.8 — Log damaged/missing items
@@ -231,10 +227,12 @@
 * **Given** the corresponding order exists and is marked as shipped
 * **When** a driver marks an order item as damaged or missing
 * **Then** the system updates the order
+* **And** management is sent a report
 * **And** the user receives visual confirmation
 
 #### Scenario: User logs duplicate items
 * **Given** the corresponding order exists
 * **When** a driver marks an order item as damaged or missing for a second time
 * **Then** the system updates the order with duplicate information
+* **And** management is sent a report
 * **And** the user receives visual confirmation
