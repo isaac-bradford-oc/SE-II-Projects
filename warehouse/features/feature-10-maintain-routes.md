@@ -104,13 +104,13 @@
 ### US-6.3 — Delete route
 
 #### Scenario: User deletes route successfully
-* **Given** an office manager fills in the "delete route" form with acceptable information
+* **Given** an office manager clicks the "delete route" button
 * **When** the user saves the form
 * **Then** the system saves the form to the database
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an office manager fills in the "delete route" form with invalid information
+* **Given** an office manager clicks the "delete route" button
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation

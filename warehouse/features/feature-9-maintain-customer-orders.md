@@ -13,8 +13,8 @@
 
 ### US-9.1: Add order
 **As a** office manager
-**I want** to make a new order
-**So that** the company can order low quantity items for warehouses 
+**I want** to create a new customer order
+**So that** the company can send customers the items they need
 
 **Priority:** P1
 **Independent test:** Create a new order and preview the order on a webpage
@@ -23,7 +23,7 @@
 ### US-9.2: Edit order
 **As a** office manager
 **I want** to edit an order
-**So that** it is possible to make revisions to an order before it is sent
+**So that** it is possible to make revisions to an order before it is picked or shipped
 
 **Priority:** P1
 **Independent test:** Edit an existing order and preview the order on a webpage
@@ -32,48 +32,58 @@
 ### US-9.3: Delete order
 **As a** office manager
 **I want** to delete an order
-**So that** incorrect orders are not sent by accident
+**So that** incorrect or completed orders are not picked or shipped by accident
 
 **Priority:** P1
 **Independent test:** Remove an order and see that it is not on the orders webpage
 **Acceptance scenarios:** see ### US-9.3 under Acceptance Criteria
 
-### US-9.4: Send order
+### US-9.4: Pick order
 **As a** office manager
-**I want** to send an order to a customer
-**So that** needed items are ordered
+**I want** to mark a customer order as ready to be picked
+**So that** pickers know to pick the order
 
 **Priority:** P1
-**Independent test:** Send an order and see that the order form is sent to the customer
+**Independent test:** Mark an order as ready for picking and view its status on the orders webpage
 **Acceptance scenarios:** see ### US-9.4 under Acceptance Criteria
 
-### US-9.5: Receieve Bill of Lading
-**As a** stocker
-**I want** to scan Bill of Lading into the system
-**So that** the corresponding order is updated to reflect the received items
+### US-9.5: Ship order
+**As a** picker
+**I want** to mark a customer order shipped
+**So that** drivers knows which orders are ready to be delivered
 
 **Priority:** P1
-**Independent test:** Scan Bill of Lading and view it on the corresponding order's webpage
+**Independent test:** Mark an order as shipped and view its status on the orders webpage
 **Acceptance scenarios:** see ### US-9.5 under Acceptance Criteria
 
-### US-9.6: Log damaged/missing items
-**As a** stocker
-**I want** to log damaged and/or missing items
-**So that** office managers and the system know to order more of the damaged/missing product
-**And** that the customer is notified
+### US-9.6: Create Bill of Lading
+**As a** automated process
+**I want** create Bill of Lading after order is marked as ready 
+**So that** the customer knows which items the company shipped
 
 **Priority:** P1
-**Independent test:** Stocker marks item on the order as damaged/missing and office manager sees the updated order form 
+**Independent test:** Mark as shipped and view Bill of Lading corresponding order's webpage
 **Acceptance scenarios:** see ### US-9.6 under Acceptance Criteria
 
-### US-9.7: Auto-order low items
-**As a** automated process
-**I want** order items when their quantity is below a calculated threshold
-**So that** the inventory is kept adequately stocked for orders
+### US-9.7: Deliver order
+**As a** driver
+**I want** to mark a customer order as delivered
+**So that** company knows which orders were delivered
 
 **Priority:** P1
-**Independent test:** Item quantity goes below minimum target and system auto-orders that item up to its maximum target quantity
+**Independent test:** Mark an order as delivered and view its status on the orders webpage
 **Acceptance scenarios:** see ### US-9.7 under Acceptance Criteria
+
+### US-9.8: Log damaged/missing items
+**As a** driver
+**I want** to log damaged and/or missing items
+**So that** office managers know to audit processes to see where the incident may take place
+
+**Priority:** P1
+**Independent test:** Driver marks item on the order as damaged/missing and office manager sees the updated order form 
+**Acceptance scenarios:** see ### US-9-8 under Acceptance Criteria
+
+
 
 ---
 
@@ -81,17 +91,17 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST receive and parse Bill of Lading images.
-- **FR-002**: System MUST automatically order items up to their calculated maximum quantity when their current quantitiy goes below their calculated minimum quantity. 
+- **FR-001**: System MUST generate Bills of Lading.
+- **FR-002**: System MUST modify Bills of Lading with damaged/missing items. 
 - **FR-003**: System MUST validate user form input before saving to database.
 - **FR-004**: System MUST provide the user with visual confirmation of action taken after attempting to save input.
+- **FR-005**: System MUST notify customers when an order is on its way. 
 
 ---
 
 ## Key Entities
 
-- **Item**: product with SKU, Item UPC, Case UPC, Customer, Description, Bin/Slot location, Case Quantity, Case Cost, Price, On-hand, Min, Max, On-order, and Order Case.
-- **Customer**: item customer with Name, Ship Days, Address, Terms, and Min Order.
+- **Customer Order**: customer order with Name, Address, Customer Number, P.O Number, Order Date, and Authorizor.
 
 ---
 
@@ -144,71 +154,87 @@
 ### US-9.3 — Delete order
 
 #### Scenario: User deletes order successfully
-* **Given** an office manager fills in the "delete order" form with acceptable information
+* **Given** an office manager clicks the "delete order" button
 * **When** the user saves the form
 * **Then** the system saves the form to the database
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an office manager fills in the "delete order" form with invalid information
+* **Given** an office manager clicks the "delete order" button
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-9.4 — Send order
+### US-9.4 — Pick order
 
-#### Scenario: User sends order successfully
-* **Given** the order exists and has necessary information
-* **When** an office manager clicks the "send order" button
-* **Then** the system sends the order to the customer
+#### Scenario: User marks order for picking successfully
+* **Given** the order exists and has the necessary information
+* **When** an office manager clicks the "ready for picking" button
+* **Then** the system notifies pickers and updates the database accordingly
 * **And** the user receives visual confirmation
 
-#### Scenario: User sends duplicate order
-* **Given** the order exists and has necessary information and has already been sent
-* **When** an office manager clicks the "send order" button
-* **Then** the system sends a duplicate order to the customer
+#### Scenario: User marks order for picking a second time
+* **Given** the order exists and has the necessary information
+* **When** an office manager clicks the "ready for picking" button for a second time
+* **Then** the system notifies pickers again and updates the database/website
 * **And** the user receives visual confirmation
 
-### US-9.5 — Receive Bill of Lading
+### US-9.5 — Ship order
 
-#### Scenario: User scans Bill of Lading successfully
-* **Given** the Bill of Lading has necessary information
-* **When** a stocker scans the Bill of Lading with a mobile device's camera
-* **Then** the system receives the Bill of Lading
-* **And** the system updates the order with Bill of Lading information
+#### Scenario: User marks order as shipped successfully
+* **Given** the order exists and is marked as ready for picking
+* **When** a picker clicks the "ship order" button
+* **Then** the system notifies drivers
+* **And** the system updates the database/website
 * **And** the user receives visual confirmation
 
-#### Scenario: User scans duplicate Bill of Lading
-* **Given** the Bill of Lading has necessary information
-* **When** a stocker scans the Bill of Lading with a mobile device's camera for a second time
-* **Then** the system receives the Bill of Lading
-* **And** the system updates the order with duplicate Bill of Lading information
+#### Scenario: User marks order as shipped a second time
+* **Given** the order exists and is marked as shipped
+* **When** a picker clicks the "ship order" button
+* **Then** the system notifies drivers again
+* **And** the system updates the database/website
 * **And** the user receives visual confirmation
 
-### US-9.6 — Log damaged/missing items
+### US-9.6 — Create Bill of Lading
+
+#### Scenario: System creates Bill of Lading successfully
+* **Given** the corresponding order exists
+* **When** a picker marks an order as shipped
+* **Then** the system creates a Bill of Lading
+* **And** the system sends the Bill of Lading to appropriate drivers
+
+#### Scenario: Picker marks order as shipped before finished picking
+* **Given** the corresponding order exists and the picking process is not completed
+* **When** a picker marks an order as shipped
+* **Then** the system creates a Bill of Lading without all of the needed items
+* **And** the system sends the Bill of Lading to appropriate drivers
+
+### US-9.7 — Deliver order
+
+#### Scenario: User marks order as delivered successfully
+* **Given** the order is delivered to customer
+* **When** the driver marks order as delivered
+* **Then** the system updates the database/website
+* **And** management is sent a report
+* **And** the user receives visual confirmation
+
+#### Scenario: User marks order as delivered before finished delivering
+* **Given** the order is not delivered to customer
+* **When** the driver marks order as delivered
+* **Then** the system updates the database/website
+* **And** management is sent a report
+* **And** the user receives visual confirmation
+
+### US-9.8 — Log damaged/missing items
 
 #### Scenario: User logs items successfully
-* **Given** the corresponding order exists
-* **When** a stocker marks an order item as damaged or missing
+* **Given** the corresponding order exists and is marked as shipped
+* **When** a driver marks an order item as damaged or missing
 * **Then** the system updates the order
 * **And** the user receives visual confirmation
 
 #### Scenario: User logs duplicate items
 * **Given** the corresponding order exists
-* **When** a stocker marks an order item as damaged or missing for a second time
+* **When** a driver marks an order item as damaged or missing for a second time
 * **Then** the system updates the order with duplicate information
 * **And** the user receives visual confirmation
-
-### US-9.7 — Auto-order low items
-
-#### Scenario: System auto-orders items successfully
-* **Given** the specified items are below their minimum target quantity
-* **When** the system creates an auto-order
-* **Then** the system sends the order to the customer
-* **And** management is sent a report
-
-#### Scenario: Item quantity is inaccurate
-* **Given** the specified items are reported below their minimum target quantity, but their actual quantity is higher
-* **When** the system creates an auto-order
-* **Then** the system sends the order to the customer for too much of the specified items
-* **And** management is sent an inaccurate report

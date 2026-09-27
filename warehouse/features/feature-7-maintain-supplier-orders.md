@@ -75,6 +75,15 @@
 **Independent test:** Item quantity goes below minimum target and system auto-orders that item up to its maximum target quantity
 **Acceptance scenarios:** see ### US-7.7 under Acceptance Criteria
 
+### US-7.8: Stock order
+**As a** driver
+**I want** to mark an order as ready to be stocked
+**So that** stockers are notified
+
+**Priority:** P1
+**Independent test:** Mark an order as ready for stocking and view its status on the orders webpage
+**Acceptance scenarios:** see ### US-7.8 under Acceptance Criteria
+
 ---
 
 ## Requirements
@@ -90,8 +99,7 @@
 
 ## Key Entities
 
-- **Item**: product with SKU, Item UPC, Case UPC, Supplier, Description, Bin/Slot location, Case Quantity, Case Cost, Price, On-hand, Min, Max, On-order, and Order Case.
-- **Supplier**: item supplier with Name, Ship Days, Address, Terms, and Min Order.
+- **Supplier Order**: supplier order with Name, Address, Customer Number, P.O Number, Order Date, and Authorizor.
 
 ---
 
@@ -144,13 +152,13 @@
 ### US-7.3 — Delete order
 
 #### Scenario: User deletes order successfully
-* **Given** an office manager fills in the "delete order" form with acceptable information
+* **Given** an office manager clicks the "delete order" button
 * **When** the user saves the form
 * **Then** the system saves the form to the database
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an office manager fills in the "delete order" form with invalid information
+* **Given** an office manager clicks the "delete order" button
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
@@ -212,3 +220,19 @@
 * **When** the system creates an auto-order
 * **Then** the system sends the order to the supplier for too much of the specified items
 * **And** management is sent an inaccurate report
+
+### US-7.8 — Stock order
+
+#### Scenario: User marks order as ready for stocking successfully
+* **Given** the corresponding order exists with Bill of Lading
+* **When** a driver marks an order item as ready for stocking
+* **Then** the system updates the order in the database/website
+* **Then** the system notifies stockers
+* **And** the user receives visual confirmation
+
+#### Scenario: User marks order as ready for stocking a second time
+* **Given** the corresponding order exists and is marked as ready for stocking
+* **When** a driver marks an order item as ready for stocking for a second time
+* **Then** the system updates the order in the database/website
+* **Then** the system notifies stockers again
+* **And** the user receives visual confirmation

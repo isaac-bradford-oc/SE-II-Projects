@@ -102,13 +102,13 @@
 ### US-8.3 — Delete customer
 
 #### Scenario: User deletes customer successfully
-* **Given** an office manager fills in the "delete customer" form with acceptable information
+* **Given** an office manager clicks the "delete customer" button
 * **When** the user saves the form
 * **Then** the system saves the form to the database
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an office manager fills in the "delete customer" form with invalid information
+* **Given** an office manager clicks the "delete customer" button
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation

@@ -101,13 +101,13 @@
 ### US-2.3 — Delete warehouse
 
 #### Scenario: User deletes warehouse successfully
-* **Given** an company admin fills in the "delete warehouse" form with acceptable information
+* **Given** a company admin clicks the "delete warehouse" button
 * **When** the user saves the form
 * **Then** the system saves the form to the database
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an company admin fills in the "delete warehouse" form with invalid information
+* **Given** a company admin clicks the "delete warehouse" button
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation

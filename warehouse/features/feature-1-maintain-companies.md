@@ -102,13 +102,13 @@
 ### US-1.3 — Delete company
 
 #### Scenario: User deletes company successfully
-* **Given** an admin fills in the "delete company" form with acceptable information
+* **Given** an admin clicks the "delete company" button
 * **When** the user saves the form
 * **Then** the system saves the form to the database
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an admin fills in the "delete company" form with invalid information
+* **Given** an admin clicks the "delete company" button
 * **When** the user saves the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
