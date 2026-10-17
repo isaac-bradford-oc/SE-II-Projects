@@ -1,7 +1,7 @@
 # Feature: Maintain Players
 
-**Feature ID:** 6
-**Branch pattern:** `feature/6-maintain-players`
+**Feature ID:** 7
+**Branch pattern:** `feature/7-maintain-players`
 **Status:** Ready
 **Created:** 2026-10-11
 **Input:** Keep current list of players' information updated.
@@ -11,32 +11,32 @@
 
 ## User Stories
 
-### US-6.1: Add player
+### US-7.1: Add player
 **As a** manager
 **I want to** add a player to the database
 **So that** the table of players remains up-to-date
 
 **Priority:** P1
 **Independent test:** Add a player to the database and view it in a database table
-**Acceptance scenarios:** see ### US-6.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-7.1 under Acceptance Criteria
 
-### US-6.2: Edit player
+### US-7.2: Edit player
 **As a** manager
 **I want to** edit a player in the database
 **So that** player information remains up-to-date
 
 **Priority:** P1
 **Independent test:** Edit a player in the database and view it in a database table
-**Acceptance scenarios:** see ### US-6.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-7.2 under Acceptance Criteria
 
-### US-6.3: Delete player
+### US-7.3: Delete player
 **As a** manager
 **I want to** delete a player from the database
 **So that** the table of players remains up-to-date
 
 **Priority:** P1
 **Independent test:** Remove a player from the database and see that it is not in a database table
-**Acceptance scenarios:** see ### US-6.3 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-7.3 under Acceptance Criteria
 
 ---
 
@@ -89,7 +89,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-6.1 — Add player
+### US-7.1 — Add player
 
 #### Scenario: User adds player successfully
 * **Given** an manager fills in the "add player" form with acceptable information
@@ -103,7 +103,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-6.2 — Edit player
+### US-7.2 — Edit player
 
 #### Scenario: User edits player successfully
 * **Given** an manager fills in the "edit player" form with acceptable information
@@ -117,7 +117,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-6.3 — Delete player
+### US-7.3 — Delete player
 
 #### Scenario: User deletes player successfully
 * **Given** an manager clicks the "delete player" button

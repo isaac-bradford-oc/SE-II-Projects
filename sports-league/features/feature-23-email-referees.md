@@ -1,42 +1,24 @@
-# Feature: Maintain Referees
+# Feature: Email Referees
 
-**Feature ID:** 9
-**Branch pattern:** `feature/9-maintain-referees`
+**Feature ID:** 23
+**Branch pattern:** `feature/23-email-referees`
 **Status:** Ready
-**Created:** 2026-10-11
-**Input:** Keep current list of referees' information updated.
-**Depends on:** — 
+**Created:** 2026-10-17
+**Input:** Email referees to notify them of schedule changes and other updates.
+**Depends on:** — [Feature 10 — Maintain Referees](feature-10-maintain-referees.md)
 
 ---
 
 ## User Stories
 
-### US-9.1: Add referee
+### US-23.1: Email referee
 **As a** owner
-**I want to** add a referee to the database
-**So that** the table of referees remains up-to-date
+**I want to** email referee(s)
+**So that** referees are in the loop on relevant updates
 
 **Priority:** P1
-**Independent test:** Add a referee to the database and view it in a database table
-**Acceptance scenarios:** see ### US-9.1 under Acceptance Criteria
-
-### US-9.2: Edit referee
-**As a** owner
-**I want to** edit a referee in the database
-**So that** referee information remains up-to-date
-
-**Priority:** P1
-**Independent test:** Edit a referee in the database and view it in a database table
-**Acceptance scenarios:** see ### US-9.2 under Acceptance Criteria
-
-### US-9.3: Delete referee
-**As a** owner
-**I want to** delete a referee from the database
-**So that** the table of referees remains up-to-date
-
-**Priority:** P1
-**Independent test:** Remove a referee from the database and see that it is not in a database table
-**Acceptance scenarios:** see ### US-9.3 under Acceptance Criteria
+**Independent test:** Email referee(s) and verify that email(s) were sent to the corresponding addresses
+**Acceptance scenarios:** see ### US-23.1 under Acceptance Criteria
 
 ---
 
@@ -44,15 +26,16 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST allow owners to manage individual referees.
-- **FR-002**: System MUST validate user form input before saving to database.
-- **FR-003**: System MUST provide the user with visual confirmation of action taken after attempting to save input.
+- **FR-001**: System MUST allow owners to email all referees or a subset of referees.
+- **FR-002**: System MUST optionally allow owners to filter the referee subset based on sport, league, or team.
+- **FR-003**: System MUST validate email recipients before sending email.
+- **FR-004**: System MUST provide the user with visual confirmation of action taken after attempting to send email.
 
 ---
 
 ## Key Entities
 
-- **Referee**: a referee with name, email, sports, and positions.
+- **referee**: a referee with name, email, sports, and positions.
 
 ---
 
@@ -79,7 +62,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-9.1 — Add referee
+### US-23.1 — Add referee
 
 #### Scenario: User adds referee successfully
 * **Given** an owner fills in the "add referee" form with acceptable information
@@ -93,7 +76,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-9.2 — Edit referee
+### US-23.2 — Edit referee
 
 #### Scenario: User edits referee successfully
 * **Given** an owner fills in the "edit referee" form with acceptable information
@@ -107,7 +90,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-9.3 — Delete referee
+### US-23.3 — Delete referee
 
 #### Scenario: User deletes referee successfully
 * **Given** an owner clicks the "delete referee" button

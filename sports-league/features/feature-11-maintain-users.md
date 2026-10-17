@@ -1,7 +1,7 @@
 # Feature: Maintain Users
 
-**Feature ID:** 10
-**Branch pattern:** `feature/10-maintain-users`
+**Feature ID:** 11
+**Branch pattern:** `feature/11-maintain-users`
 **Status:** Ready
 **Created:** 2026-10-11
 **Input:** Keep current list of users updated.
@@ -11,32 +11,32 @@
 
 ## User Stories
 
-### US-10.1: Add user
+### US-11.1: Add user
 **As a** first-time user
 **I want to** create an account
 **So that** I can access the league website and stay up-to-date
 
 **Priority:** P1
 **Independent test:** Create an account as a new user and view the user in a database table
-**Acceptance scenarios:** see ### US-10.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-11.1 under Acceptance Criteria
 
-### US-10.2: Edit user
+### US-11.2: Edit user
 **As a** user
 **I want to** edit my account information
 **So that** my information remains up-to-date
 
 **Priority:** P1
 **Independent test:** Edit a user and view the user in a database table
-**Acceptance scenarios:** see ### US-10.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-11.2 under Acceptance Criteria
 
-### US-10.3: Delete user
+### US-11.3: Delete user
 **As a** user
 **I want to** delete my account
 **So that** my user data is deleted and so that I stop receiving communications
 
 **Priority:** P1
 **Independent test:** Delete user account and see that the user is not in a database table
-**Acceptance scenarios:** see ### US-10.3 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-11.3 under Acceptance Criteria
 
 ---
 
@@ -71,7 +71,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-10.1 — Add user
+### US-11.1 — Add user
 
 #### Scenario: User adds user successfully
 * **Given** an user fills in the sign-up form with acceptable information
@@ -85,7 +85,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-10.2 — Edit user
+### US-11.2 — Edit user
 
 #### Scenario: User edits user successfully
 * **Given** an user fills in the "edit user" form with acceptable information
@@ -99,7 +99,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-10.3 — Delete user
+### US-11.3 — Delete user
 
 #### Scenario: User deletes user successfully
 * **Given** an user clicks the "delete user" button

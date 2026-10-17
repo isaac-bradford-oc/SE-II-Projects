@@ -1,33 +1,33 @@
 # Feature: Display Leagues
 
-**Feature ID:** 12
-**Branch pattern:** `feature/12-display-leagues`
+**Feature ID:** 13
+**Branch pattern:** `feature/13-display-leagues`
 **Status:** Ready
 **Created:** 2026-10-15
-**Input:** Keep current list of leagues updated.
+**Input:** Display leagues and access individual league information on a webpage.
 **Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md), [Feature 2 — Maintain Leagues](feature-2-maintain-leagues.md)
 
 ---
 
 ## User Stories
 
-### US-12.1: View league
+### US-13.1: View league
 **As a** user
 **I want to** be able to view all available leagues
 **So that** I access individual leagues
 
 **Priority:** P1
 **Independent test:** View all leagues on the sports?{sport_id} page
-**Acceptance scenarios:** see ### US-12.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-13.1 under Acceptance Criteria
 
-### US-12.2: Access a league's information
+### US-13.2: Access a league's information
 **As a** user
 **I want to** be able to access a league's information
 **So that** I can stay informed about that league
 
 **Priority:** P1
 **Independent test:** Access a given league's information from the sports?{sport_id} page
-**Acceptance scenarios:** see ### US-12.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-13.2 under Acceptance Criteria
 
 ---
 
@@ -60,7 +60,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-12.1 — View league
+### US-13.1 — View league
 
 #### Scenario: User views league successfully
 * **Given** a user is on the website
@@ -72,7 +72,7 @@
 * **When** the user goes to the sports?{sport_id} page
 * **Then** the system displays the sports?{sport_id} page with a NoLeaguesExistException
 
-### US-12.2 — Access a league's information
+### US-13.2 — Access a league's information
 
 #### Scenario: User views league successfully
 * **Given** the system displays the sports?{sport_id} page with each league and its information

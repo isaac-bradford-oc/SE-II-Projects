@@ -5,7 +5,7 @@
 **Status:** Ready
 **Created:** 2026-10-11
 **Input:** Keep current list of games' information updated.
-**Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md), [Feature 2 — Maintain Leagues](feature-2-maintain-leagues.md), [Feature 3 — Maintain Seasons](feature-3-maintain-seasons.md), [Feature 5 — Maintain Teams](feature-5-maintain-teams.md), [Feature 8 — Maintain Locations](feature-8-maintain-locations.md)
+**Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md), [Feature 2 — Maintain Leagues](feature-2-maintain-leagues.md), [Feature 3 — Maintain Seasons](feature-3-maintain-seasons.md), [Feature 5 — Maintain Teams](feature-5-maintain-teams.md), [Feature 9 — Maintain Locations](feature-9-maintain-locations.md)
 
 ---
 

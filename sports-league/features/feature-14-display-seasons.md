@@ -1,33 +1,33 @@
 # Feature: Display Seasons
 
-**Feature ID:** 13
-**Branch pattern:** `feature/13-display-seasons`
+**Feature ID:** 14
+**Branch pattern:** `feature/14-display-seasons`
 **Status:** Ready
 **Created:** 2026-10-15
-**Input:** Keep current list of seasons updated.
+**Input:** Display seasons and access individual season information on a webpage.
 **Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md), [Feature 2 — Maintain Leagues](feature-2-maintain-leagues.md), [Feature 3 — Maintain Seasons](feature-3-maintain-seasons.md)
 
 ---
 
 ## User Stories
 
-### US-13.1: View season
+### US-14.1: View season
 **As a** user
 **I want to** be able to view all available seasons
 **So that** I access individual seasons
 
 **Priority:** P1
 **Independent test:** View all seasons on the leagues?{league_id} page
-**Acceptance scenarios:** see ### US-13.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-14.1 under Acceptance Criteria
 
-### US-13.2: Access a season's information
+### US-14.2: Access a season's information
 **As a** user
 **I want to** be able to access a season's information
 **So that** I can stay informed about that season
 
 **Priority:** P1
 **Independent test:** Access a given season's information from the leagues?{league_id} page
-**Acceptance scenarios:** see ### US-13.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-14.2 under Acceptance Criteria
 
 ---
 
@@ -60,7 +60,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-13.1 — View season
+### US-14.1 — View season
 
 #### Scenario: User views season successfully
 * **Given** a user is on the website
@@ -72,7 +72,7 @@
 * **When** the user goes to the leagues?{league_id} page
 * **Then** the system displays the leagues?{league_id} page with a NoSeasonsExistException
 
-### US-13.2 — Access a season's information
+### US-14.2 — Access a season's information
 
 #### Scenario: User views season successfully
 * **Given** the system displays the leagues?{league_id} page with each season and its information

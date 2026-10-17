@@ -1,33 +1,33 @@
 # Feature: Display Players
 
-**Feature ID:** 16
-**Branch pattern:** `feature/16-display-players`
+**Feature ID:** 17
+**Branch pattern:** `feature/17-display-players`
 **Status:** Ready
 **Created:** 2026-10-15
-**Input:** Keep current list of players updated.
-**Depends on:** — [Feature 6 — Maintain Players](feature-6-maintain-players.md)
+**Input:** Display players and access individual player information on a webpage.
+**Depends on:** — [Feature 7 — Maintain Players](feature-7-maintain-players.md)
 
 ---
 
 ## User Stories
 
-### US-16.1: View player
+### US-17.1: View player
 **As a** user
 **I want to** be able to view all available players
 **So that** I access individual players
 
 **Priority:** P1
 **Independent test:** View all players on the teams?{team_id} page
-**Acceptance scenarios:** see ### US-16.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-17.1 under Acceptance Criteria
 
-### US-16.2: Access a player's information
+### US-17.2: Access a player's information
 **As a** user
 **I want to** be able to access a player's information
 **So that** I can stay informed about that player
 
 **Priority:** P1
 **Independent test:** Access a given player's information from the teams?{team_id} page
-**Acceptance scenarios:** see ### US-16.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-17.2 under Acceptance Criteria
 
 ---
 
@@ -79,7 +79,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-16.1 — View player
+### US-17.1 — View player
 
 #### Scenario: User views player successfully
 * **Given** a user is on the website
@@ -91,7 +91,7 @@
 * **When** the user goes to the teams?{team_id} page
 * **Then** the system displays the teams?{team_id} page with a NoPlayersExistException
 
-### US-16.2 — Access a player's information
+### US-17.2 — Access a player's information
 
 #### Scenario: User views player successfully
 * **Given** the system displays the teams?{team_id} page with each player and its information

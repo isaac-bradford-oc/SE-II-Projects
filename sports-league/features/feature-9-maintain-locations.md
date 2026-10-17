@@ -1,7 +1,7 @@
 # Feature: Maintain Locations
 
-**Feature ID:** 8
-**Branch pattern:** `feature/8-maintain-locations`
+**Feature ID:** 9
+**Branch pattern:** `feature/9-maintain-locations`
 **Status:** Ready
 **Created:** 2026-10-11
 **Input:** Keep current list of locations updated.
@@ -11,32 +11,32 @@
 
 ## User Stories
 
-### US-8.1: Add location
+### US-9.1: Add location
 **As a** owner
 **I want to** add a location to the database
 **So that** the table of locations remains up-to-date
 
 **Priority:** P1
 **Independent test:** Add a location to the database and view it in a database table
-**Acceptance scenarios:** see ### US-8.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-9.1 under Acceptance Criteria
 
-### US-8.2: Edit location
+### US-9.2: Edit location
 **As a** owner
 **I want to** edit a location in the database
 **So that** location information remains up-to-date
 
 **Priority:** P1
 **Independent test:** Edit a location in the database and view it in a database table
-**Acceptance scenarios:** see ### US-8.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-9.2 under Acceptance Criteria
 
-### US-8.3: Delete location
+### US-9.3: Delete location
 **As a** owner
 **I want to** delete a location from the database
 **So that** the table of locations remains up-to-date
 
 **Priority:** P1
 **Independent test:** Remove a location from the database and see that it is not in a database table
-**Acceptance scenarios:** see ### US-8.3 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-9.3 under Acceptance Criteria
 
 ---
 
@@ -70,7 +70,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-8.1 — Add location
+### US-9.1 — Add location
 
 #### Scenario: User adds location successfully
 * **Given** an owner fills in the "add location" form with acceptable information
@@ -84,7 +84,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-8.2 — Edit location
+### US-9.2 — Edit location
 
 #### Scenario: User edits location successfully
 * **Given** an owner fills in the "edit location" form with acceptable information
@@ -98,7 +98,7 @@
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
 
-### US-8.3 — Delete location
+### US-9.3 — Delete location
 
 #### Scenario: User deletes location successfully
 * **Given** an owner clicks the "delete location" button

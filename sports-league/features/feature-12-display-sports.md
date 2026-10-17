@@ -1,33 +1,33 @@
 # Feature: Display Sports
 
-**Feature ID:** 11
-**Branch pattern:** `feature/11-display-sports`
+**Feature ID:** 12
+**Branch pattern:** `feature/12-display-sports`
 **Status:** Ready
 **Created:** 2026-10-15
-**Input:** Keep current list of sports updated.
+**Input:** Display sports and access individual sport information on a webpage.
 **Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md)
 
 ---
 
 ## User Stories
 
-### US-11.1: View sport
+### US-12.1: View sport
 **As a** user
 **I want to** be able to view all available sports
 **So that** I access individual sports
 
 **Priority:** P1
 **Independent test:** View all sports on the home page
-**Acceptance scenarios:** see ### US-11.1 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-12.1 under Acceptance Criteria
 
-### US-11.2: Access a sport's information
+### US-12.2: Access a sport's information
 **As a** user
 **I want to** be able to access a sport's information
 **So that** I can stay informed about that sport
 
 **Priority:** P1
 **Independent test:** Access a given sport's information from the home page
-**Acceptance scenarios:** see ### US-11.2 under Acceptance Criteria
+**Acceptance scenarios:** see ### US-12.2 under Acceptance Criteria
 
 ---
 
@@ -59,7 +59,7 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-11.1 — View sport
+### US-12.1 — View sport
 
 #### Scenario: User views sport successfully
 * **Given** a user is on the website
@@ -71,7 +71,7 @@
 * **When** the user goes to the home page
 * **Then** the system displays the home page with a NoSportsExistException
 
-### US-11.2 — Access a sport's information
+### US-12.2 — Access a sport's information
 
 #### Scenario: User views sport successfully
 * **Given** the system displays the home page with each sport and its information
