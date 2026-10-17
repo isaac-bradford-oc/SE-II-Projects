@@ -5,7 +5,7 @@
 **Status:** Ready
 **Created:** 2026-10-15
 **Input:** Display schedules and access individual schedule information on a webpage.
-**Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md), [Feature 2 — Maintain Leagues](feature-2-maintain-leagues.md), [Feature 3 — Maintain Seasons](feature-3-maintain-seasons.md), [Feature 4 — Maintain Games](feature-4-maintain-games.md), [Feature 5 — Maintain Teams](feature-5-maintain-teams.md), [Feature 9 — Maintain Locations](feature-9-maintain-locations.md)
+**Depends on:** — [Feature 1 — Maintain Sports](feature-1-maintain-sports.md), [Feature 2 — Maintain Leagues](feature-2-maintain-leagues.md), [Feature 3 — Maintain Seasons](feature-3-maintain-seasons.md), [Feature 4 — Maintain Games](feature-4-maintain-games.md), [Feature 5 — Maintain Teams](feature-5-maintain-teams.md), [Feature 9 — Maintain Locations](feature-9-maintain-locations.md), [Feature 24 — Generate Games For Season](feature-24-generate-games-for-season.md)
 
 ---
 
@@ -46,6 +46,15 @@
 **Priority:** P1
 **Independent test:** Access a given team schedule's information from the teams?{team_id} page
 **Acceptance scenarios:** see ### US-19.4 under Acceptance Criteria
+
+### US-19.5: View season schedule generation tool
+**As a** user
+**I want to** be able to view the season schedule generation tool
+**So that** I create new schedules
+
+**Priority:** P1
+**Independent test:** View the tool on the seasons?{season_id} page
+**Acceptance scenarios:** see ### US-19.5 under Acceptance Criteria
 
 ---
 
@@ -129,3 +138,15 @@
 * **Given** the system displays the teams?{team_id} page with each team schedule and its information
 * **When** the user attempts to access a given team's schedule information
 * **Then** the system displays the schedules?{schedule_id} page with a NoTeamScheduleInformationException
+
+### US-19.5 — View season schedule generation tool
+
+#### Scenario: User views tool successfully
+* **Given** a user is on the website
+* **When** the user goes to the seasons?{season_id} page
+* **Then** the system displays the seasons?{season_id} page with the season schedule generation tool
+
+#### Scenario: Tool is unavailable
+* **Given** a user is on the website
+* **When** the user goes to the seasons?{season_id} page
+* **Then** the system displays the seasons?{season_id} page with a NoSchedulingToolExistsException

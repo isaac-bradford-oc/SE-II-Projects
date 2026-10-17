@@ -62,44 +62,16 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-21.1 — Add manager
+### US-21.1 — Email manager
 
-#### Scenario: User adds manager successfully
-* **Given** an owner fills in the "add manager" form with acceptable information
-* **When** the user saves the form
-* **Then** the system saves the form to the database
+#### Scenario: User emails manager(s) successfully
+* **Given** an owner fills in the "email manager" form with acceptable information
+* **When** the user submits the form
+* **Then** the system emails managers(s)
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
 * **Given** an owner fills in the "add manager" form with invalid information (e.g. too many characters)
-* **When** the user saves the form
-* **Then** the system throws an exception
-* **And** the user receives visual confirmation
-
-### US-21.2 — Edit manager
-
-#### Scenario: User edits manager successfully
-* **Given** an owner fills in the "edit manager" form with acceptable information
-* **When** the user saves the form
-* **Then** the system saves the form to the database
-* **And** the user receives visual confirmation
-
-#### Scenario: User inputs invalid information into the form
-* **Given** an owner fills in the "edit manager" form with invalid information
-* **When** the user saves the form
-* **Then** the system throws an exception
-* **And** the user receives visual confirmation
-
-### US-21.3 — Delete manager
-
-#### Scenario: User deletes manager successfully
-* **Given** an owner clicks the "delete manager" button
-* **When** the user saves the form
-* **Then** the system saves the form to the database
-* **And** the user receives visual confirmation
-
-#### Scenario: User inputs invalid information into the form
-* **Given** an owner clicks the "delete manager" button
-* **When** the user saves the form
+* **When** the user submits the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation

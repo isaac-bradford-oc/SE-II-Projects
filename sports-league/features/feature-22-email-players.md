@@ -72,44 +72,16 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-22.1 — Add player
+### US-22.1 — Email player
 
-#### Scenario: User adds player successfully
-* **Given** an owner fills in the "add player" form with acceptable information
-* **When** the user saves the form
-* **Then** the system saves the form to the database
+#### Scenario: User emails player(s) successfully
+* **Given** an owner fills in the "email player" form with acceptable information
+* **When** the user submits the form
+* **Then** the system emails player(s)
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an owner fills in the "add player" form with invalid information (e.g. too many characters)
-* **When** the user saves the form
-* **Then** the system throws an exception
-* **And** the user receives visual confirmation
-
-### US-22.2 — Edit player
-
-#### Scenario: User edits player successfully
-* **Given** an owner fills in the "edit player" form with acceptable information
-* **When** the user saves the form
-* **Then** the system saves the form to the database
-* **And** the user receives visual confirmation
-
-#### Scenario: User inputs invalid information into the form
-* **Given** an owner fills in the "edit player" form with invalid information
-* **When** the user saves the form
-* **Then** the system throws an exception
-* **And** the user receives visual confirmation
-
-### US-22.3 — Delete player
-
-#### Scenario: User deletes player successfully
-* **Given** an owner clicks the "delete player" button
-* **When** the user saves the form
-* **Then** the system saves the form to the database
-* **And** the user receives visual confirmation
-
-#### Scenario: User inputs invalid information into the form
-* **Given** an owner clicks the "delete player" button
-* **When** the user saves the form
+* **Given** an owner fills in the "email player" form with invalid information (e.g. too many characters)
+* **When** the user submits the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation

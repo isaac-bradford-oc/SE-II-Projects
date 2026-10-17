@@ -62,44 +62,16 @@
 
 ## Acceptance Criteria (Gherkin)
 
-### US-23.1 — Add referee
+### US-23.1 — Email referee
 
-#### Scenario: User adds referee successfully
-* **Given** an owner fills in the "add referee" form with acceptable information
-* **When** the user saves the form
-* **Then** the system saves the form to the database
+#### Scenario: User emails referee(s) successfully
+* **Given** an owner fills in the "email referee" form with acceptable information
+* **When** the user submits the form
+* **Then** the system emails referee(s)
 * **And** the user receives visual confirmation
 
 #### Scenario: User inputs invalid information into the form
-* **Given** an owner fills in the "add referee" form with invalid information (e.g. too many characters)
-* **When** the user saves the form
-* **Then** the system throws an exception
-* **And** the user receives visual confirmation
-
-### US-23.2 — Edit referee
-
-#### Scenario: User edits referee successfully
-* **Given** an owner fills in the "edit referee" form with acceptable information
-* **When** the user saves the form
-* **Then** the system saves the form to the database
-* **And** the user receives visual confirmation
-
-#### Scenario: User inputs invalid information into the form
-* **Given** an owner fills in the "edit referee" form with invalid information
-* **When** the user saves the form
-* **Then** the system throws an exception
-* **And** the user receives visual confirmation
-
-### US-23.3 — Delete referee
-
-#### Scenario: User deletes referee successfully
-* **Given** an owner clicks the "delete referee" button
-* **When** the user saves the form
-* **Then** the system saves the form to the database
-* **And** the user receives visual confirmation
-
-#### Scenario: User inputs invalid information into the form
-* **Given** an owner clicks the "delete referee" button
-* **When** the user saves the form
+* **Given** an owner fills in the "email referee" form with invalid information (e.g. too many characters)
+* **When** the user submits the form
 * **Then** the system throws an exception
 * **And** the user receives visual confirmation
