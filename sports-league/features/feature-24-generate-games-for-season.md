@@ -27,7 +27,13 @@
 ### Functional Requirements
 
 - **FR-001**: System MUST generate (n_teams-1)*2 games for every schedule.
-- **FR-002**: System MUST display either a confirmation of schedule creation or an error to user
+- **FR-002**: System MUST display either a confirmation of schedule creation or an error to user.
+
+### Screen Requirements
+
+- **SR-001**: Screen should have a row of checkboxes for the days of the week games will be played.
+- **SR-002**: Screen should have a two date pickers - one for start date and one for end date.
+- **SR-003**: Screen should have generate season button.
 
 ---
 

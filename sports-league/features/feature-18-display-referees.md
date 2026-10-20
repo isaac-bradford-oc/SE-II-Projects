@@ -38,6 +38,12 @@
 - **FR-001**: System MUST display referees on the games?{game_id} page in card elements.
 - **FR-002**: System MUST display all information for each referee such that it is all visible to the user at the same time.
 
+### Screen Requirements
+
+- **SR-001**: Each referee should have CRUD operations.
+- **SR-002**: Add and Edit operations should each have one corresponding button which leads user to appropriate screen.
+- **SR-003**: Delete button should open a confirmation dialog.
+
 ---
 
 ## Key Entities

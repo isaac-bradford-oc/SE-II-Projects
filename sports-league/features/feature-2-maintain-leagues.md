@@ -48,6 +48,12 @@
 - **FR-002**: System MUST validate user form input before saving to database.
 - **FR-003**: System MUST provide the user with visual confirmation of action taken after attempting to save input.
 
+### Screen Requirements
+
+- **SR-001**: Add and Edit operations should each have one corresponding screen.
+- **SR-002**: Add screen should have input fields for all required database columns, a create button, and cancel button.
+- **SR-003**: Edit screen should have input fields for all required database columns, a save button, and cancel button.
+
 ---
 
 ## Key Entities

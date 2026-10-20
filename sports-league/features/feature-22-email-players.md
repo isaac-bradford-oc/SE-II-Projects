@@ -31,6 +31,10 @@
 - **FR-003**: System MUST validate email recipients before sending email.
 - **FR-004**: System MUST provide the user with visual confirmation of action taken after attempting to send email.
 
+### Screen Requirements
+
+- **SR-001**: Screen should have multi-select dropdowns for selecting players, sports, leagues, and/or teams, subject and body text fields, and a send button.
+
 ---
 
 ## Key Entities
